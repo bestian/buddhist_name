@@ -124,8 +124,8 @@
       <div class="item" v-for = "(n, k) in t(s(names))" :key="k"> <img class="avatar" :src="par(n.photoURL)" v-show="n.photoURL" :alt="n.n"/> {{n.date}}: {{n.n}}念了<span class="highlight"> {{parseInt(n.number)}} 聲</span>佛號!! </div>
     </div>
 
-    <div class="ui list container left aligned" v-show="mode == 'all' && step == 1">
-      <div class="item" v-for = "(n, j) in s(allnames)" :key="j"> <img class="avatar" :src="par(n.photoURL)" v-show="n.photoURL" :alt="n.n"/> {{n.date}}: {{n.n}}念了<span class="highlight"> {{parseInt(n.number)}} 聲</span>佛號!! </div>
+    <div id="infinite" class="ui list container left aligned" v-show="mode == 'all' && step == 1">
+      <div class="item" v-for = "(n, j) in s(allnames).slice(0, len)" :key="j"> <img class="avatar" :src="par(n.photoURL)" v-show="n.photoURL" :alt="n.n"/> {{n.date}}: {{n.n}}念了<span class="highlight"> {{parseInt(n.number)}} 聲</span>佛號!! </div>
     </div>
 
     <div class="ui divider" v-show="step == 1"></div>
@@ -188,7 +188,7 @@ export default {
   metaInfo: {
     title: '歡迎',
   },
-  props: ['names', 'myTotal', 'myToDay', 'allnames'],
+  props: ['names', 'myTotal', 'myToDay', 'allnames', 'len'],
   data: () => ({
       step: 1,
       date: new Date().getFullYear() +'/'+ parseInt(1+new Date().getMonth()) +'/'+ new Date().getDate(),
@@ -207,7 +207,7 @@ export default {
       uid: '',
       provider: '',
       photoURL: '',
-      dismiss: false,
+      dismiss: false
   }),
   computed: {
     myS () {

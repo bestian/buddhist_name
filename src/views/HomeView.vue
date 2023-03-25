@@ -1,6 +1,6 @@
 <template>
   <div class="home">
-    <HelloWorld msg="Welcome to Your Vue.js App" :names="names" :myTotal="myTotal" :myToDay="myToDay" :myS="myS" :allnames="allnames" />
+    <HelloWorld msg="Welcome to Your Vue.js App" :names="names" :myTotal="myTotal" :myToDay="myToDay" :myS="myS" :allnames="allnames" :len="len"/>
   </div>
 </template>
 
@@ -10,7 +10,7 @@ import HelloWorld from '@/components/HelloWorld.vue'
 
 export default {
   name: 'HomeView',
-  props: ['names', 'myTotal', 'myToDay', 'myS', 'allnames'],
+  props: ['names', 'myTotal', 'myToDay', 'myS', 'allnames', 'len'],
   components: {
     HelloWorld
   }
