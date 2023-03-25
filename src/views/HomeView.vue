@@ -1,7 +1,6 @@
 <template>
   <div class="home">
-    <img alt="Vue logo" src="../assets/logo.png">
-    <HelloWorld msg="Welcome to Your Vue.js App"/>
+    <HelloWorld msg="Welcome to Your Vue.js App" :names="names" :myTotal="myTotal" :myToDay="myToDay" :myS="myS" :allnames="allnames" />
   </div>
 </template>
 
@@ -11,6 +10,7 @@ import HelloWorld from '@/components/HelloWorld.vue'
 
 export default {
   name: 'HomeView',
+  props: ['names', 'myTotal', 'myToDay', 'myS', 'allnames'],
   components: {
     HelloWorld
   }
