@@ -63,11 +63,11 @@ export default {
             (
               new Date(n.time).getFullYear() === new Date().getFullYear() && new Date(n.time).getMonth() === new Date().getMonth() && new Date(n.time).getDate() === new Date().getDate()
             )) {
-          console.log(n)
+          // console.log(n)
           ans += parseInt(n.number)
         }
       }
-      console.log(ans)
+      // console.log(ans)
       return ans
     },
     myTotal () {
