@@ -242,7 +242,7 @@ export default {
     },
     obj_to_list (obj) {
       if (Array.isArray(obj)) {
-        return obj
+        return [...obj]
       } else {
         const ks = Object.keys(obj)
         const list = ks.map(function (i) {
