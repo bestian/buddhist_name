@@ -3,15 +3,15 @@
     <h1>
       <a @click="step = 0"><img src="../assets/fuo.jpg" class="avatar" alt="fuo"/>永明佛寺念佛共修</a></h1>
 
-    <h2 v-show="step == 0">App免費下載</h2>
+   <h2 v-show="step == 0">App免費下載</h2>
 
-    <div class="ui buttons" v-show="step == 0">
+     <!-- <div class="ui buttons" v-show="step == 0">
       <a class="ui huge blue button" href="https://apps.apple.com/tw/app/%E5%BF%B5%E4%BD%9B%E8%99%9F/id1637378153" target="_blank"><i class="app store icon" />App Store下載
       </a>
 
       <a class="ui huge orange button" href="https://play.google.com/store/apps/details?id=tw.bestian.fuo" target="_blank"><i class="google play icon" />Google Play下載
-      </a>
-    </div>
+      </a> 
+    </div>-->
 
     <div class="ui divider" v-show="step == 0"></div>
 
@@ -27,7 +27,7 @@
 
     <div class="ui segment container" v-show="step == 1">
 
-      <h2 class="ui header">2023春季千萬佛號活動</h2>
+      <h2 class="ui header">2023春季千萬佛號活動-2</h2>
 
       <div class="ui active inverted dimmer" v-show="!myTotal">
         <div class="ui text loader">資料載入中...</div>
@@ -167,7 +167,10 @@
         </div>
       </div>
     </form>
-    <div id = "container" style="disply:none"></div>
+    <div id = "container" style="disply:none">
+      <!-- <a id ="downloadAnchorElem"></a>
+      <a id ="downloadAnchorElem1"></a> -->
+    </div>
 
   </div>
 </template>
@@ -300,6 +303,20 @@ export default {
     },
     loginGoogle () {
       const vm = this
+
+      /* var dataStr = "data:text/json;charset=utf-8," + encodeURIComponent(JSON.stringify(this.allnames.slice(0, this.allnames.length - 100)));
+      var dlAnchorElem = document.getElementById('downloadAnchorElem');
+      dlAnchorElem.setAttribute("href",     dataStr     );
+      dlAnchorElem.setAttribute("download", "data-old.json");
+      dlAnchorElem.click();
+
+
+      var dataStr1 = "data:text/json;charset=utf-8," + encodeURIComponent(JSON.stringify(this.allnames.slice(this.allnames.length - 100, this.allnames.length + 1)));
+      var dlAnchorElem1 = document.getElementById('downloadAnchorElem1');
+      dlAnchorElem1.setAttribute("href",     dataStr1     );
+      dlAnchorElem1.setAttribute("download", "data-new.json");
+      dlAnchorElem1.click(); */
+
       if (this.isInApp) {
         window.alert('本系統不支援facebook, line等app內部瀏覽，請用一般瀏覽器開啟，方可登入，謝謝')
       } else {
