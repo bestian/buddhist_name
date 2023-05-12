@@ -2,7 +2,7 @@
   <div class="about">
     <div class="ui category search">
       <div class="ui icon input">
-        <input class="prompt" type="text" placeholder="Search..." v-model="key">
+        <input class="prompt" type="text" placeholder="以姓名查詢" v-model="key">
         <i class="search icon"></i>
       </div>
     </div>
@@ -14,7 +14,7 @@
         <th><i class="plus icon"/>加總</th>
       </tr></thead>
       <tbody>
-        <tr v-for = "u in users.slice(0, n)" :key="u">
+        <tr v-for = "u in my_fil(users, key)" :key="u">
           <td data-label="Name"><h3 class="ui header">{{ u }}</h3></td>
           <!-- <td data-label="Number">
              <div class="ui list">
@@ -73,6 +73,18 @@ export default {
     window.addEventListener("scroll", vm.handleScroll)
   },
   methods: {
+    my_fil(list, key) {
+      return list.filter((o) => {
+        var re = /(.+)?[/／|丨\s]+/;
+        let n = k.n.replace(re, '');
+        re = /(.+)?[〈（](.+)[）〉].*/;
+        n = n.replace(re, '$2');
+        n = n.replace('丨','');
+
+        let pattern = new RegExp(key, 'i')
+        return pattern.test(0)
+      })
+    }
     handleScroll () {
       this.n += 1
     },
