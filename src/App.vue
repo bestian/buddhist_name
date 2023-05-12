@@ -4,9 +4,9 @@
       <router-link class = "item" to ="/">
         <i class ="home icon"/>
         <span class="fat-only">首頁</span></router-link>
-      <!-- <router-link class = "item" to ="/about"><i class ="plus icon"/>
-        <span class="fat-only">加總</span></router-link>
-      <router-link class = "item" to ="/day"><i class ="calendar icon"/>
+      <router-link class = "item" to ="/about"><i class ="plus icon"/>
+        <span class="fat-only">個人查詢</span></router-link>
+      <!-- <router-link class = "item" to ="/day"><i class ="calendar icon"/>
         <span class="fat-only">每日</span></router-link> -->
       <router-link class = "item" to ="/rank"><i class ="chess king
  icon"/>
@@ -77,7 +77,7 @@ export default {
       for (var i = 0; i < this.names.length; i++) {
         let n = this.names[i]
         // console.log(new Date(n.time).getFullYear())
-        if ((new Date(n.time).getFullYear() > 2023) || ((new Date(n.time).getFullYear() == 2023) && (new Date(n.time).getMonth() >= 2))) {
+        if ((new Date(n.time).getFullYear() > 2023) || ((new Date(n.time).getFullYear() == 2023) && (new Date(n.time).getMonth() >= 4))) {
           // console.log(parseInt(n.number))
           ans += parseInt(n.number)
         }

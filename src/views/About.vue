@@ -74,17 +74,20 @@ export default {
   },
   methods: {
     my_fil(list, key) {
-      return list.filter((o) => {
+      if (!key) {
+        return []
+      }
+      return list.filter((u) => {
+        console.log(u)
         var re = /(.+)?[/／|丨\s]+/;
-        let n = k.n.replace(re, '');
+        u = u.replace(re, '');
         re = /(.+)?[〈（](.+)[）〉].*/;
-        n = n.replace(re, '$2');
-        n = n.replace('丨','');
-
+        u = u.replace(re, '$2');
+        u = u.replace('丨','');
         let pattern = new RegExp(key, 'i')
-        return pattern.test(0)
+        return pattern.test(u)
       })
-    }
+    },
     handleScroll () {
       this.n += 1
     },
