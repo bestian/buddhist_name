@@ -1,7 +1,7 @@
 # buddhist_name
 
 ## Note
-This Repo is no longer maintained, it was moved to the for "ahmitaba/buddhist_name"
+This Repo is no longer maintained, it was moved to the for [ahmitaba/buddhist_name](ahmitaba/buddhist_name)
 
 
 ## Project setup
